@@ -35,8 +35,9 @@
                 {% for todolist in todo_items %}
                     {% if todolist.completed %}
                     <li class="collection-item active">{{todolist.text}}</li>
-                    {% endif %}
+                    {% else %}
                     <li class="collection-item">{{todolist.text}}</li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>
