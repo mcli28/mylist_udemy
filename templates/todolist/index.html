@@ -30,6 +30,16 @@
                 <input type="button" value="Eliminar Todas" class="btn red">
             </div>
         </div>
+        <div class="row">
+            <ul class="collection">
+                {% for todolist in todo_items %}
+                    {% if todolist.completed %}
+                    <li class="collection-item active">{{todolist.text}}</li>
+                    {% endif %}
+                    <li class="collection-item">{{todolist.text}}</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <script src="{% static 'js/jquery351min.js' %}"></script>
     <script src="{% static 'js/materialize.js' %}"></script>
