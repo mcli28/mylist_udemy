@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row" style="margin-bottom: 0;">
+                <div class="col s12 m8 offset-m1 xl7 offset-xl1 center-on-small-only">
+                    <h1 class="header">Todo-list</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <input type="text" name="" id=""> <input type="button" value="Adicionar" class="btn">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <input type="button" value="Eliminar Completados" class="btn amber">
+                <input type="button" value="Eliminar Todas" class="btn red">
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery351min.js' %}"></script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+</body>
+</html>
