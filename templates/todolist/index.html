@@ -21,13 +21,16 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
-                <input type="text" name="" id=""> <input type="button" value="Adicionar" class="btn">
+                <form action="{% url 'add' %}" method="POST">
+                    {% csrf_token %}
+                    {{form.text}} <input type="submit" value="Adicionar" class="btn">
+                </form>
             </div>
         </div>
         <div class="row">
             <div class="col s12 m12 l12">
-                <input type="button" value="Eliminar Completados" class="btn amber">
-                <input type="button" value="Eliminar Todas" class="btn red">
+                <a href="{% url 'deletecompleted' %}" class="btn amber">Eliminar Completados</a>
+                <a href="{% url 'deleteall' %}" class="btn red">Eliminar Todas</a>
             </div>
         </div>
         <div class="row">
@@ -36,7 +39,7 @@
                     {% if todolist.completed %}
                     <li class="collection-item active">{{todolist.text}}</li>
                     {% else %}
-                    <li class="collection-item">{{todolist.text}}</li>
+                    <a href="{% url 'completed' todolist.id %}"><li class="collection-item">{{todolist.text}}</li></a>
                     {% endif %}
                 {% endfor %}
             </ul>
