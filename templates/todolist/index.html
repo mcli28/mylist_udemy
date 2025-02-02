@@ -23,7 +23,8 @@
             <div class="col s12 m12 l12">
                 <form action="{% url 'add' %}" method="POST">
                     {% csrf_token %}
-                    {{form.text}} <input type="submit" value="Adicionar" class="btn">
+                    {{form.text}} 
+                    <input type="submit" value="Adicionar" class="btn">
                 </form>
             </div>
         </div>
